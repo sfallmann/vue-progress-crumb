@@ -15,7 +15,7 @@
             class="crumb--font"
             width="100%"
             height="60"
-  
+
             border-color="#59876a"
             bg-color="#70ad47"
             text="Audience Files Updated"
@@ -44,7 +44,7 @@
             text="Work Request Submitted"
             text-color="white"
             left-indent
-          />               
+          />
         </div>
         <crumb
           class="progress-bar-footer"
@@ -54,7 +54,7 @@
           bg-color="lightgray"
           text="Requestor"
           text-color="black"
-        />        
+        />
       </div>
       <div class="offer-delivery-progress">
         <div class="markers-container">
@@ -68,7 +68,7 @@
             text="Work Request Acknowledged"
             text-color="white"
             left-indent
-          />      
+          />
           <crumb
             class="crumb--font crumb--not-complete"
             width="100%"
@@ -79,7 +79,7 @@
             text="Work Request Assigned"
             text-color="white"
             left-indent
-          />      
+          />
           <crumb
             class="crumb--font crumb--not-complete"
             width="100%"
@@ -90,7 +90,7 @@
             text="Work Request Configured"
             text-color="white"
             left-indent
-          />      
+          />
           <crumb
             class="crumb--font crumb--not-complete"
             width="100%"
@@ -101,7 +101,7 @@
             text="Work Request Published"
             text-color="white"
             left-indent
-          />  
+          />
           <crumb
             class="crumb--font crumb--not-complete"
             width="100%"
@@ -112,7 +112,7 @@
             text="Final QA Completed"
             text-color="white"
             left-indent
-          />      
+          />
           <crumb
             class="crumb--font crumb--not-complete"
             width="100%"
@@ -123,7 +123,7 @@
             text="Ready to Go Live"
             text-color="white"
             left-indent
-          />                                       
+          />
         </div>
         <crumb
           class="progress-bar-footer"
@@ -134,19 +134,18 @@
           text="Offer Delivery Team"
           left-indent
           text-color="black"
-        />        
-      </div>   
+        />
+      </div>
     </div>
-
 
   </div>
 </template>
 
 <script>
-import Crumb from "./components/Crumb";
+import Crumb from './components/Crumb.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Crumb,
   },

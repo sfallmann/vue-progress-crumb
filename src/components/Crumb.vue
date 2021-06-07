@@ -1,4 +1,3 @@
-
 <template>
   <div class="crumb" :style="crumbStyle">
     <div class="crumb__wrapper" :style="innerWrapperStyle">
@@ -27,11 +26,11 @@
 </template>
 <script>
 export default {
-  name: "Crumb",
+  name: 'Crumb',
   props: {
     text: {
       type: String,
-      default: "",
+      default: '',
     },
     leftIndent: {
       type: Boolean,
@@ -39,29 +38,29 @@ export default {
     },
     height: {
       type: String,
-      default: "60",
+      default: '60',
     },
     width: {
       type: String,
-      default: "100%",
+      default: '100%',
     },
     minWidth: {
       type: String,
     },
     maxWidth: {
       type: String,
-    },    
+    },
     textColor: {
       type: String,
-      default: "white",
+      default: 'white',
     },
     textOpacity: {
       type: String,
-      default: "0.85",
+      default: '0.85',
     },
     bgColor: {
       type: String,
-      default: "gray",
+      default: 'gray',
     },
     borderSize: {
       type: Number,
@@ -69,7 +68,7 @@ export default {
     },
     borderColor: {
       type: String,
-      default: "black",
+      default: 'black',
     },
   },
   computed: {
@@ -103,13 +102,12 @@ export default {
     },
     outerCrumbWidth() {
       if (Number.isNaN(this.widthValue)) return this.width;
-      else return `${this.width}px`;
+      return `${this.width}px`;
     },
     outerCrumbCenterWidth() {
       const offset = this.borderSize === 1 ? 1 : 0;
 
-      if (Number.isNaN(this.widthValue))
-        return `calc(${this.width} - ${this.outerCrumbWidthDiff}px)`;
+      if (Number.isNaN(this.widthValue)) return `calc(${this.width} - ${this.outerCrumbWidthDiff}px)`;
       return `${this.widthValue - this.outerCrumbWidthDiff - offset}px`;
     },
     innerCrumbWidthDiff() {
@@ -125,7 +123,7 @@ export default {
       if (Number.isNaN(this.widthValue)) {
         if (this.borderSize) {
           return `calc(${this.width} + ${this.borderSize}px)`;
-        }        
+        }
 
         return `calc(${this.width} - ${this.innerCrumbWidthDiff}px)`;
       }
@@ -148,7 +146,7 @@ export default {
       }
       if (this.maxWidth) {
         style.maxWidth = Number.isNaN(Number(this.maxWidth)) ? this.maxWidth : `${this.maxWidth}px`;
-      } 
+      }
       return style;
     },
     innerWrapperStyle() {
