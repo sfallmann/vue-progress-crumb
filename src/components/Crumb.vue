@@ -43,8 +43,14 @@ export default {
     },
     width: {
       type: String,
-      default: "auto",
+      default: "100%",
     },
+    minWidth: {
+      type: String,
+    },
+    maxWidth: {
+      type: String,
+    },    
     textColor: {
       type: String,
       default: "white",
@@ -117,13 +123,9 @@ export default {
         : multiplier;
 
       if (Number.isNaN(this.widthValue)) {
-        const vwAdjustment = this.width.includes("vw") ? this.borderSize : 0;
-
         if (this.borderSize) {
-          return `calc(${this.width} + ${this.borderSize}px - ${
-            offset + vwAdjustment + this.innerCrumbWidthDiff
-          }px)`;
-        }
+          return `calc(${this.width} + ${this.borderSize}px)`;
+        }        
 
         return `calc(${this.width} - ${this.innerCrumbWidthDiff}px)`;
       }
@@ -135,10 +137,19 @@ export default {
       return `${this.widthValue - this.innerCrumbWidthDiff}px`;
     },
     crumbStyle() {
-      return {
+      const style = {
         width: this.outerCrumbWidth,
         height: `${this.heightValue}px`,
       };
+      if (this.minWidth) {
+        style.minWidth = Number.isNaN(Number(this.minWidth)) ? this.minWidth : `${this.minWidth}px`;
+      } else if (!Number.isNaN(Number(this.widthValue))) {
+        style.minWidth = this.outerCrumbWidth;
+      }
+      if (this.maxWidth) {
+        style.maxWidth = Number.isNaN(Number(this.maxWidth)) ? this.maxWidth : `${this.maxWidth}px`;
+      } 
+      return style;
     },
     innerWrapperStyle() {
       return {
@@ -239,10 +250,10 @@ export default {
 }
 
 .crumb__content {
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .crumb__content__text {
   width: 100%;
@@ -250,6 +261,7 @@ export default {
 .crumb__wrapper {
   position: relative;
   box-sizing: border-box;
+  display: flex;
 }
 .crumb {
   box-sizing: border-box;

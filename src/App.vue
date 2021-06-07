@@ -7,16 +7,15 @@
             class="crumb--font"
             width="140"
             height="60"
-            :border-size="2"
             border-color="#59876a"
             bg-color="#70ad47"
             text="Offer Matrix Uploaded"
           />
           <crumb
             class="crumb--font"
-            width="140"
+            width="100%"
             height="60"
-            :border-size="2"
+  
             border-color="#59876a"
             bg-color="#70ad47"
             text="Audience Files Updated"
@@ -25,7 +24,7 @@
           />
           <crumb
             class="crumb--font"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -37,7 +36,7 @@
           <crumb
             class="crumb--font"
             :class="{ 'crumb--not-complete': notComplete }"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -61,7 +60,7 @@
         <div class="markers-container">
           <crumb
             class="crumb--font crumb--not-complete"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -72,7 +71,7 @@
           />      
           <crumb
             class="crumb--font crumb--not-complete"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -83,7 +82,7 @@
           />      
           <crumb
             class="crumb--font crumb--not-complete"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -94,7 +93,7 @@
           />      
           <crumb
             class="crumb--font crumb--not-complete"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -105,7 +104,7 @@
           />  
           <crumb
             class="crumb--font crumb--not-complete"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -116,7 +115,7 @@
           />      
           <crumb
             class="crumb--font crumb--not-complete"
-            width="140"
+            width="100%"
             height="60"
             bg-color="#70ad47"
             border-color="#59876a"
@@ -173,11 +172,12 @@ export default {
 }
 .crumb--font {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 16px;
   font-family: Calibri;
   font-weight: 700;
   opacity: 1;
   transition: opacity .75s;
+  min-width: 135px;
 }
 .crumb--not-complete {
   transition: opacity .75s;
