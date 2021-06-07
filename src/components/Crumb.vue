@@ -73,7 +73,7 @@ export default {
     heightValue() {
       const height = Number(this.height);
       if (Number.isNaN(height)) return 60;
-      return height >= 30 ? height : 30;
+      return height;
     },
     innerCrumbHeight() {
       if (this.borderSize) {
@@ -176,6 +176,7 @@ export default {
     },
     contentStyle() {
       return {
+        paddingLeft: this.leftIndent ? 0 : '5px',
         maxWidth: `${this.innerCrumbCenterWidth}`,
         maxHeight: `${this.innerCrumbHeight}px`,
       };
@@ -238,7 +239,6 @@ export default {
 }
 
 .crumb__content {
-  padding-left: 10px;
   width: 100%;
   height: 100%;
   display: flex;
